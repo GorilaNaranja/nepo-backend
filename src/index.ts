@@ -1,31 +1,32 @@
 import express, { Express, Request, Response, NextFunction } from "express";
+import bodyParser from "body-parser";
+import routes from './routes/index';
+import { handleErrors } from "./middleware/handleErrors";
+
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
-// const routes = require("./routes/index");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World');  
+app.get("/ping", (req: Request, res: Response) => {
+  res.send("Node app running");
 });
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-  console.log(`${req.method} request for ${req.url}`);
-  next();
-});
+app.use("/", routes);
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);  
+  console.log(`Server listening on port ${port}`);
 });
 
 app.use(cors());
-// app.options("*", cors()); // add this before your routes
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use(routes);
 
 app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  handleErrors(err, req, res, next);
 });

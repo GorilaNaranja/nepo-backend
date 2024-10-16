@@ -1,8 +1,11 @@
 export interface Buyer {
-  id: String,
-
+  id: string,
+  name: string,
+  location: string,
+  status: BuyerStatus,
 }
-export enum PaymentStatus {
-  SUCCESS = 'SUCCESS',
-  FAILED = 'FAILED'
+
+export enum BuyerStatus {
+  OPEN = 'OPEN',
+  CLOSED = 'CLOSED'
 }
