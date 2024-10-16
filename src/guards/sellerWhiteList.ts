@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 
-export const sellerWhiteListGuard = async ( req: Request, res: Response, next: NextFunction) => {
+export const sellersBannedGuard = async ( req: Request, res: Response, next: NextFunction) => {
   
-  const sellersAllowed = ['123456', '654321', '000000'];
+  const bannedSellers = ['000000'];
   const sellerId = req.query.id as string;
-  if (sellersAllowed.includes(sellerId)) {
-    next();
+
+  if (bannedSellers.includes(sellerId)) {
+    res.json('Seller banned');
   } else {
-    res.json('Seller is not in the whitelist');
+    next();
   }
 };
