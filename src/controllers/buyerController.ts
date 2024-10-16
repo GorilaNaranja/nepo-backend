@@ -12,7 +12,7 @@ const getBuyers = (req: Request, res: Response, next: NextFunction) => {
 
 const getBuyer = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const buyersList = getBuyerById(req.query.id as any);
+    const buyersList = getBuyerById(req.query.id as string);
     res.json(buyersList);
   } catch (error) {
     console.log(error);
