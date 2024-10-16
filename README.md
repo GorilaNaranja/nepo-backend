@@ -11,7 +11,7 @@ npm build
 npm run dev
 ```
 
-It will start a servicer in localhost:3000
+Node app will start in localhost:3000
 
 ## GET Endpoints
 ```bash
