@@ -11,7 +11,7 @@ npm build
 npm run dev
 ```
 
-Node app will start in localhost:3000
+Node app will start in localhost:4000
 
 ## GET Endpoints
 ```bash

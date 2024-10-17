@@ -2,10 +2,10 @@ export interface Buyer {
   id: string,
   name: string,
   location: string,
-  status: BuyerStatus,
+  type: BuyerType,
 }
 
-export enum BuyerStatus {
-  OPEN = 'OPEN',
-  CLOSED = 'CLOSED'
+export enum BuyerType {
+  BIG_COMPANY = 'BIG_COMPANY',
+  SMALL_COMPANY = 'SMALL_COMPANY',
 }

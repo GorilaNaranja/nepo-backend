@@ -4,9 +4,11 @@ import routes from './routes/index';
 import { handleErrors } from "./middleware/handleErrors";
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4003;
 
 const cors = require("cors");
+app.use(cors());
+app.options("*", cors());
 
 app.get("/ping", (req: Request, res: Response) => {
   res.send("Node app running");
@@ -18,7 +20,6 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

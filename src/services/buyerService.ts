@@ -1,17 +1,17 @@
-import { Buyer, BuyerStatus } from "../models/Buyer";
+import { Buyer, BuyerType } from "../models/Buyer";
 
 const listOfBuyers: Buyer[] = [
   {
     id: '123456', 
     name: 'Mr Buyer',
     location: 'EEUU',
-    status: BuyerStatus.OPEN,
+    type: BuyerType.BIG_COMPANY,
   },
   {
     id: '654321', 
     name: 'Miss Buyer',
     location: 'Spain',
-    status: BuyerStatus.CLOSED,
+    type: BuyerType.SMALL_COMPANY,
   }
 ];
 
