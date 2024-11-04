@@ -12,6 +12,18 @@ const listOfBuyers: Buyer[] = [
     name: 'Miss Buyer',
     location: 'Spain',
     type: BuyerType.SMALL_COMPANY,
+  },
+  {
+    id: '0124124', 
+    name: 'Felipe',
+    location: 'Spain',
+    type: BuyerType.SMALL_COMPANY,
+  },
+  {
+    id: '9127491', 
+    name: 'Elena',
+    location: 'Italy',
+    type: BuyerType.SMALL_COMPANY,
   }
 ];
 

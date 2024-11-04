@@ -12,6 +12,18 @@ const listOfSellers: Seller[] = [
     name: 'Miss Seller',
     location: 'Spain',
     status: SellerStatus.OPEN,
+  },
+  {
+    id: '0124124', 
+    name: 'Felipe',
+    location: 'Spain',
+    status: SellerStatus.OPEN,
+  },
+  {
+    id: '9127491', 
+    name: 'Elena',
+    location: 'Italy',
+    status: SellerStatus.OPEN,
   }
 ];
 
